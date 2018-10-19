@@ -1,0 +1,30 @@
+apt_packages:
+  - git
+  - libpq-dev
+  - mc
+  - vim
+  - g++
+
+GOPATH: /vagrant
+
+golang_shell_profile: /home/vagrant/.bashrc
+
+go_get: []
+
+postgresql_version: 9.5
+
+postgresql_databases:
+  - name: test
+    owner: user_test
+    hstore: yes
+
+postgresql_users:
+  - name: user_test
+    pass: 123456
+    encrypted: no
+
+postgresql_user_privileges:
+  - name: user_test
+    db: test
+    priv: "ALL"
+    role_attr_flags: "SUPERUSER"
